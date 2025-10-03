@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* left, center, right */
+  padding: 16px 32px;
+
+  background-color: #000;
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Left: Site name */
+.navbar-left .site-name {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Center: Search */
+.navbar-middle {
+  flex: 1; /* take remaining space */
+  display: flex;
+  justify-content: center;
+}
+.nav-search {
+  padding: 8px 16px;
+  border-radius: 9999px; /* pill style */
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.2); /* semi-transparent */
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  width: 300px; /* adjust width */
+  transition: all 0.3s ease;
+  margin-left: 250px;
+}
+.nav-search::placeholder {
+  color: rgba(255,255,255,0.7); /* placeholder color */
+}
+.nav-search:focus {
+  outline: none;
+  border-color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  background: rgba(255,255,255,0.3);
+}
+
+/* Right: Pills */
+.navbar-right {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-pill {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px 20px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-pill:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #000;
+}
+
+.nav-pill.active {
+  background-color: rgba(255,255,255,0.5);
+  color: #000;
+}
