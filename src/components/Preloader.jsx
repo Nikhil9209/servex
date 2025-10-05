@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./Preloader.css"; // We'll style it next
-import logo from "../assets/logo.png"; // correct relative path
+import "./Preloader.css";
+import logo from "../assets/logo.png";
 
 export default function Preloader({ onFinish }) {
   const [loading, setLoading] = useState(true);
@@ -8,8 +8,8 @@ export default function Preloader({ onFinish }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-      if (onFinish) onFinish(); // callback to hide preloader
-    }, 3000); // show preloader for 3 seconds
+      if (onFinish) onFinish();
+    }, 3000);
     return () => clearTimeout(timer);
   }, [onFinish]);
 
@@ -17,8 +17,16 @@ export default function Preloader({ onFinish }) {
 
   return (
     <div className="preloader">
-      <img src={logo} alt="Logo" className="preloader-logo" />
-      <p className="preloader-text">Loading...</p>
+      <div className="preloader-content">
+        <div className="preloader-logo-container">
+          <img src={logo} alt="Logo" className="preloader-logo" />
+        </div>
+        <div className="preloader-text">ServeX</div>
+        <div className="preloader-progress">
+          <div className="preloader-progress-bar"></div>
+        </div>
+        <p className="preloader-subtext">Connecting you to trusted services...</p>
+      </div>
     </div>
   );
 }
